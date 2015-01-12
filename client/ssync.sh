@@ -1,13 +1,13 @@
 #!/bin/sh
 
-ip=$(ipconfig getifaddr en0)
-echo "My current ip - $ip"
+client_ip=$(ipconfig getifaddr en0)
+echo "My current ip - $client_ip"
 echo ""
 
 if [ $# -eq 0 ]
   then
-    echo "Pass ip as an argument"
-    echo "Ex: ssync.sh arg1"
+    echo "Pass server ip as an argument"
+    echo "Ex: ssync.sh $server_ip"
     exit
 fi
 
@@ -25,6 +25,7 @@ if [ $ps_count -gt 0 ]
   else
     echo "Not Really!!! Boo... Starting synergyc..."
     ps -ef | grep -i "screen -s synergy" | grep -v grep
+    echo $1
     screen -dmS synergy bash -c "synergyc -f $1"
 fi
 
