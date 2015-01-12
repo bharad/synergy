@@ -1,4 +1,5 @@
 synergy
 =======
 
-start synergy client &amp; server and kill ps easily
+- scripts to start synergy client & server
+- scripts to kill client and server processes easily.
